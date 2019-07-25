@@ -1,4 +1,4 @@
-#+TITLE: Attendance App
+#+TITLE: attendance app
 #+AUTHOR: Matt Teichman
 #+DESCRIPTION: Web app for taking attendance
 #+OPTIONS: toc:nil, num:nil
