@@ -1,0 +1,18 @@
+#+TITLE: Attendance App
+#+AUTHOR: Matt Teichman
+#+DESCRIPTION: Web app for taking attendance
+#+OPTIONS: toc:nil, num:nil
+
+* Description
+  =Attendance App= is a is a Ruby on Rails app that teachers can use
+  to take attendance in their classrooms.  The teacher logs in under
+  =teacher mode= and enters the dates for all upcoming class sessions.
+  Before each class session, the teacher selects one of these class
+  sessions to activate.  While that class session is activated,
+  students can log in under =student mode= and demonstrate that they
+  were in attendance by entering the correct randomly generated
+  four-digit code.  The student can see which class sessions they were
+  and weren't present for, and the teacher can access attendance data
+  on all their students for the semester at a quick glance.  The app
+  also features a submission log feature for help with troubleshooting
+  that maintains a log of each student's code submission attempts.
