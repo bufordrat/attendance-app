@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-md-10">
+    <h2 class="text-center">
+      Meetings for <%= @course_name %>
+    </h2>
+
+    <br>
+    <% if ClassMeeting.count > 0 %>
+      <table class="table table-striped table-bordered">
+	<thead>
+          <th>Class Meeting</th>
+          <th>Date</th>
+	  <th>Live?</th>
+	  <th>Code</th>
+	  <th> </th>
+	  <th> </th>
+	</thead>
+	<% @meeting_array.each do |mtng| %>
+        <tr>
+          <td><%= mtng.title %></td>
+          <td><%= mtng.meeting %></td>
+	  <td>
+	    <% if mtng.is_accepting == true %>
+	    <span class="text-danger">
+	      <strong>
+		LIVE
+	      </strong>
+	    </span>
+	    <% else %>
+	    <span class="text-muted">
+	      not live
+	    </span>
+	    <% end %>
+	  </td>
+	  <td><%= mtng.code %></td>
+	  <td>
+	    <%= link_to 'edit this class', "/class_meetings/#{mtng.id}/edit" %>
+	  </td>
+	  <td>
+	    <%= link_to 'delete this class', "/class_meetings/#{mtng.id}", method: 'delete', data: { confirm: "Are you sure you want to delete this class?" } %>
+	  </td>
+        </tr>
+	<% end %>
+      </table>
+      <% else %>
+      <h4 class="text-center">You don't have any class meetings yet.  Create some below! </h4>
+      <% end %>
+
+      <div class="col-sm-12">
+	<p>
+	  <h2 class="text-center">
+	    Create a new class meeting:<br>
+	  </h2>
+	</p>
+      </div>
+      
+      <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-4">
+
+	<%= form_tag("/class_meetings", method: 'post') do %>
+
+	<div class="form-group">
+	  <p>
+	    <%= label_tag :title, "Enter the name of your new class meeting:" %>
+	    <%= text_field_tag :title, "", placeholder: "Class Meeting, e.g. 'Week 1, Thursday'", autofocus: false, class: 'form-control' %>
+	  </p>
+
+	  <p>
+	    <%= label_tag :meeting, "Enter the date:" %>
+	    <%= text_field_tag :meeting, "", placeholder: "Enter date in YYYY-MM-DD format", autofocus: false, class: 'form-control' %>
+	  </p>
+
+	  <p>
+	    <%= submit_tag "Create New Class", class: 'btn btn-success center-block'%>
+	  </p>
+	</div>
+	
+	<% end %>
+      </div>
+      <div class="col-sm-4">
+      </div>
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div>

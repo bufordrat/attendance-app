@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+
+    <%= form_tag("/class_meetings/#{@meeting.id}", method: 'patch') do %>
+
+    <div class="form-group">
+      
+      <p>
+	<%= label_tag :title, "Change the name:" %>
+	<%= text_field_tag :title, @meeting.title, autofocus: true, class: 'form-control' %>
+      </p>
+      
+      <p>
+	<%= label_tag :meeting, "Change the date:" %>
+	<%= text_field_tag :meeting, @meeting.meeting, autofocus: true, class: 'form-control' %>
+      </p>
+
+      <p>
+	<%= label_tag :code, "Change the code:" %>
+	<%= text_field_tag :code, @meeting.code, autofocus: true, class: 'form-control' %>
+      </p>
+      
+      <p>
+	<%= submit_tag "Save Changes to This Class", class: 'btn btn-success center-block'%>
+      </p>
+
+    </div>
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>

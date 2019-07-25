@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+    <p class="text-center">
+      <h1> <%= @params_user.cnetid %>'s page. </h1> <br>
+    </p>
+    <% if @meeting != nil && @user.absence_array.include?(@meeting.id) && @user.is_teacher == false%>
+
+    <p class="lead">
+      Today is <%= @meeting.title %>.
+    </p>
+    
+      <%= form_tag("/code_submit/#{params["id"]}", method: 'post') do  %>
+
+      <div class="form-group text-center">
+        <%= label_tag :code, "To check in, please submit the code on the blackboard." %>
+        <%= text_field_tag :code, "", autofocus: true, class: 'form-control' %>
+      </div>
+      <%= submit_tag "Submit Today's Code", class: 'btn btn-success btn-lg center-block'%>
+      <% end %>
+    <% end %>
+
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+  <br>
+
+<div class="row">
+  <div class="col-sm-5">
+  </div>
+  <div class="col-sm-2">
+    <hr>
+  </div>
+  <div class="col-sm-5">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+  <p>
+    <% if @params_user.absence_array != [] %>
+  <p>
+    <h3 class="text-danger">
+      So far, <%= @params_user.cnetid %> missed the following classes:
+    </h3>
+  </p>
+
+
+      <table class="table table-striped table-bordered">
+	<thead>
+          <th>Class Meeting</th>
+          <th>Date</th>
+	</thead>
+	<% @params_user.absence_array.each do |cl_id| %>
+	  <% if ClassMeeting.find_by(id: cl_id).is_accepting == false %>
+          <tr>
+            <td><%= ClassMeeting.find_by(id: cl_id).title %></td>
+            <td><%= ClassMeeting.find_by(id: cl_id).meeting %></td>
+          </tr>
+	  <% end %>
+	<% end %>
+      </table>
+      
+  <% else %>
+  Congratulations to <%= @params_user.cnetid %>, who hasn't missed any classes yet.
+  <% end %>
+  </p>
+  </div>
+</div>

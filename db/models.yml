@@ -1,0 +1,73 @@
+User
+  cnetid: text
+  is_teacher: boolean
+  password_digest: text
+
+Course
+  title: text
+  quarter: text
+  year: integer
+
+ClassMeeting
+  course_id: integer
+  title: text
+  meeting: date
+  code: integer
+  is_accepting: boolean
+
+Presence
+  user_id: integer
+  class_meeting_id: integer
+
+SubmittedCode
+  user_id: integer
+  created_at: datetime
+  is_legit: boolean
+  code: text
+
+
+
+# This file allows you to specify your domain model
+# in .yml format.  Use `rails db:migrate` to apply your
+# specification to your development database.
+#
+# Indent consistently!  Follow the syntax carefully!
+#
+# Example:
+#
+# Book
+#   title: text
+#   author_id: integer
+#   price: integer
+#   summary: text
+#   hardcover: boolean
+#   updated_at: datetime
+#
+# Column choices are: text, string, integer, boolean, date, time, and datetime.
+#
+#
+# About Default Values
+# ----------------------------------------------------
+# Default column values can be specified like this:
+#    price: integer(0)
+#
+# If not specified, boolean columns default to false.
+#
+#
+# Convention-Based Defaults:
+# ----------------------------------------------------
+# You can omit the column type if it's a string, or if it's obviously an
+# integer column or datetime column:
+#
+#
+# Book
+#   title
+#   author_id
+#   price: integer
+#   summary: text
+#   hardcover: boolean
+#   updated_at
+#
+# Complete details are online: https://github.com/jeffcohen/ez
+#
+# Have fun!

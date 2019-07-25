@@ -1,0 +1,157 @@
+
+app/assets/config/manifest.js,0
+
+app/assets/javascripts/application.js,0
+
+app/assets/javascripts/cable.js,0
+
+app/channels/application_cable/channel.rb,103
+module ApplicationCableApplicationCable1,0
+  class Channel < ActionCable::Channel::BaseChannel2,24
+
+app/channels/application_cable/connection.rb,112
+module ApplicationCableApplicationCable1,0
+  class Connection < ActionCable::Connection::BaseConnection2,24
+
+app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController1,0
+
+app/controllers/class_meetings_controller.rb,281
+class ClassMeetingsController < ApplicationControllerClassMeetingsController1,0
+  def activateactivate5,86
+  def deactivatedeactivate20,578
+  def indexindex31,920
+  def createcreate38,1093
+  def destroydestroy57,2040
+  def editedit67,2389
+  def updateupdate72,2518
+
+app/controllers/sessions_controller.rb,219
+class SessionsController < ApplicationControllerSessionsController1,0
+  def newnew3,50
+  def createcreate6,69
+  def destroydestroy25,605
+  def four_oh_fourfour_oh_four30,704
+  def blank_userblank_user39,958
+
+app/controllers/submitted_codes_controller.rb,119
+class SubmittedCodesController < ApplicationControllerSubmittedCodesController1,0
+  def submissionssubmissions3,56
+
+app/controllers/users_controller.rb,384
+class UsersController < ApplicationControllerUsersController1,0
+  def dashboarddashboard5,76
+  def submitsubmit13,374
+  def user_storiesuser_stories39,1520
+  def loginlogin42,1548
+  def studentstudent51,1850
+  def newnew67,2397
+  def createcreate70,2414
+  def roster roster84,2820
+  def destroy destroy91,2998
+  def editedit100,3280
+  def updateupdate105,3401
+
+app/helpers/application_helper.rb,196
+module ApplicationHelperApplicationHelper1,0
+  def security_check(user)security_check3,26
+  def fix_error_message(message)fix_error_message12,297
+  def fix_boolean(bool)fix_boolean36,1301
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob1,0
+
+app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer1,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord1,0
+
+app/models/class_meeting.rb,167
+class ClassMeeting < ApplicationRecordClassMeeting1,0
+  def ClassMeeting.up_to_presentup_to_present11,336
+  def ClassMeeting.unique_code(array)unique_code15,435
+
+app/models/course.rb,44
+class Course < ApplicationRecordCourse1,0
+
+app/models/presence.rb,48
+class Presence < ApplicationRecordPresence1,0
+
+app/models/submitted_code.rb,58
+class SubmittedCode < ApplicationRecordSubmittedCode1,0
+
+app/models/user.rb,81
+class User < ApplicationRecordUser1,0
+  def absence_arrayabsence_array12,274
+
+bin/bundle,0
+
+bin/rails,0
+
+bin/rake,0
+
+bin/setup,33
+def system!(*args)system!9,173
+
+bin/update,33
+def system!(*args)system!9,173
+
+bin/yarn,0
+
+config/application.rb,101
+module StartingPointStartingPoint9,192
+  class Application < Rails::ApplicationApplication10,213
+
+config/boot.rb,0
+
+config/environment.rb,0
+
+config/environments/development.rb,0
+
+config/environments/production.rb,0
+
+config/environments/test.rb,0
+
+config/initializers/application_controller_renderer.rb,0
+
+config/initializers/assets.rb,0
+
+config/initializers/backtrace_silencers.rb,139
+module ActionDispatchActionDispatch9,405
+  class ExceptionWrapperExceptionWrapper10,427
+    def framework_traceframework_trace11,452
+
+config/initializers/cookies_serializer.rb,0
+
+config/initializers/filter_parameter_logging.rb,0
+
+config/initializers/inflections.rb,0
+
+config/initializers/mime_types.rb,0
+
+config/initializers/wrap_parameters.rb,0
+
+config/puma.rb,0
+
+config/routes.rb,0
+
+config/spring.rb,0
+
+db/schema.rb,0
+
+db/seeds.rb,0
+
+public/404.html,0
+
+public/422.html,0
+
+public/500.html,0
+
+test/application_system_test_case.rb,96
+class ApplicationSystemTestCase < ActionDispatch::SystemTestCaseApplicationSystemTestCase3,23
+
+test/test_helper.rb,49
+class ActiveSupport::TestCaseActiveSupport4,90
+
+tmp/test.rb,0

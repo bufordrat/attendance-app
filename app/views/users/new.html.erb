@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+    <%= form_tag("/users/new", method: 'post') do %>
+
+    <div class="form-group">
+      
+      <p>
+	<%= label_tag :cnetid, "Enter your cnetid:" %>
+	<%= text_field_tag :cnetid, "", autofocus: true, class: 'form-control' %>
+      </p>
+      
+      <p>
+	<%= label_tag :password, "Choose a password:" %>
+	<%= password_field_tag :password, "", autofocus: true, class: 'form-control' %>
+      </p>
+
+      <p>
+	<%= submit_tag "Create an Account", class: 'btn btn-success center-block'%>
+      </p>
+      
+    </div>
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>

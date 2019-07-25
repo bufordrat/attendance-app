@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+    &nbsp;
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+    <h2> User Stories </h2>
+    <p>
+      As a visitor, I want to be able to:
+      <ul>
+	<li> log in as a student </li>
+	<li> log in as the teacher </li>
+	<li> create a student account </li>
+      </ul>
+    </p>
+    <p>
+      As a student, I want to be able to:
+      <ul>
+	<li> see which classes I have missed so far, up to today </li>
+	<li>
+	  check in for today's class, if there is a class today <br>
+	  (that involves submitting today's code, which the teacher wrote on the classroom blackboard)
+	</li>
+      </ul>
+    </p>
+    <p>
+      As a teacher, I want to be able to:
+      <ul>
+	<li> see how many absences each of my students has, up to today </li>
+	<li> for any student, view which specific classes they missed </li>
+	<li> see the secret code for today's class, so that I can write it on the blackboard </li>
+	<li>
+	  activate any class session up to the present, so that it is accepting code submissions <br>
+	  (typically, I do this just before I go in to teach each class)
+	</li>
+	<li>
+	  deactivate whichever class session is currently accepting code submissions <br>
+	  (typically, I do this right after each class session wraps up)
+	</li>
+	<li> create, read, update, and delete my all my class meetings </li>
+	<li> view my student roster </li>
+	<li> change my student's password or cnetid, if need be  </li>
+	<li> remove students who dropped the class </li>
+	<li> in the rare circumstance in which a student wants to raise an issue about when they were there, display a log of all that student's attempts to submit a code </li>
+	<li> (I don't need to be able to create students; that happens when one of them signs up for an account.)
+      </ul>
+    </p>
+    <h2> Business Rules </h2>
+    <p>
+      <ol>
+	<li> a student can't submit a code unless some class meeting is activated </li>
+	<li> when a student submits the correct code for the activated class, they are logged as present for that day. </li>
+	<li> an incorrect code submission is logged in the database but student isn't marked as present for that day </li>
+	<li> each student can access their own list of absences, the login page, the create an account page, and that's it </li>
+	<li> the teacher is in charge of activating/deactivating each class meeting </li>
+	<li> only the teacher can access the dashboard </li>
+	<li> the teacher can view list of specific absences for any student </li>
+	<li> the teacher can view and edit the data, like who is enrolled in the class and what meetings there are</li>
+      </ol>
+    </p>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+

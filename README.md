@@ -1,2 +1,3 @@
-# attendance-app
-Ruby on Rails web application for taking attendance in a classroom setting.
+# README
+
+This is a good starting point for Rails projects.

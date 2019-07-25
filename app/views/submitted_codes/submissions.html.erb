@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-md-6">
+    <% if User.count > 1 %>
+    <% if params["student"] == nil %>
+    <p>
+      <h2 class="text-center"> Submission Log </h2> <br>
+    </p>
+      <%= form_tag("/submissions/", method: 'get') do  %>
+      <%= select_tag :student, options_for_select(@students), prompt: "choose a student to view their submissions", class: 'center-block' %><br>
+      <%= submit_tag "Show This Student's Submissions", class: 'btn btn-success btn-lg center-block'%>
+      <% end %>
+      <% elsif User.find_by(cnetid: params["student"]) != nil %>
+      <% flash[:alert] = nil %>
+      <p>
+	<h2> <%= params["student"] %>'s Code Submissions </h2> <br>
+      </p>
+       <table class="table table-striped table-bordered">
+         <thead>
+           <th>Date</th>
+           <th>Time</th>	   	   
+           <th>Submission</th>
+	   <th>Valid or Not</th>
+  	 </thead>
+       <% SubmittedCode.where(user_id: User.find_by(cnetid: params["student"]).id).to_a.each do |sub| %>
+         <tr>
+           <td><%= sub.created_at.in_time_zone("Central Time (US & Canada)").strftime('%D')  %></td>
+	   <td><%= sub.created_at.in_time_zone("Central Time (US & Canada)").strftime('%l:%M %P') %></td> 
+	   <td><%= sub.code %></td>
+	   <td><%= fix_boolean(sub.is_legit) %> </td>	  
+         </tr>
+	 <% end %>
+	 <% else %>
+	 <% flash[:alert] = "Please choose a student." %>
+	 <p>
+	   <h2 class="text-center"> Submission Log </h2> <br>
+	 </p>
+	   <%= form_tag("/submissions/", method: 'get') do  %>
+           <%= select_tag :student, options_for_select(@students), prompt: "choose a student to view their submissions", class: 'center-block' %><br>
+           <%= submit_tag "Show This Student's Submissions", class: 'btn btn-success btn-lg center-block'%>
+           <% end %>
+         <% end %> 
+      </table>
+       <% else %>
+        <p>
+	  <h2 class="text-center"> Submission Log </h2> <br>
+	  <h4 class="text-center"> You don't have anyone enrolled yet. </h4>
+	</p>
+       <% end %>
+      <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-4">
+      </div>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
